@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Al-Quran Digital (Mobile Mushaf)
 
-## Getting Started
+A premium, mobile-first Al-Quran application built with Next.js, featuring a smooth Mushaf reading experience with RTL support, swipe gestures, and full offline capabilities as a Progressive Web App (PWA).
 
-First, run the development server:
+## ✨ Features
 
+- **Premium Mushaf UI**: Clean, elegant design optimized for mobile devices.
+- **RTL Support**: Native Right-to-Left layout for a natural reading experience.
+- **Swipe Navigation**: Navigate through pages with intuitive swipe gestures (Right for Next, Left for Previous).
+- **Navigation Modals**: Quickly jump to any Juz, Page, or Surah through dedicated selection modals.
+- **PWA Ready**: Install the app on your home screen for an app-like experience.
+- **Full Offline Support**: Read the entire Quran even without an internet connection, thanks to background pre-caching and static data extraction.
+- **Continue Reading**: Automatically remembers your last read page from the homepage.
+
+## 🚀 Tech Stack
+
+- **Framework**: [Next.js 16+](https://nextjs.org/) (App Router)
+- **Animation**: [Framer Motion](https://www.framer.com/motion/)
+- **Carousel/Swipe**: [Embla Carousel](https://www.embla-carousel.com/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Database**: SQLite (built-time) / JSON (runtime/offline)
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm / yarn / pnpm
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/kripul/quranapp.git
+   cd quranapp
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Prepare the data (Extract Quran text from SQLite to JSON):
+   ```bash
+   node scripts/extract-quran-data.js
+   ```
+
+### Development
+
+Run the development server:
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Production & Offline Build
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To create a fully static, offline-capable version of the app:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Build the project:
+   ```bash
+   npm run build
+   ```
 
-## Learn More
+2. Serve the static files (for local testing of PWA features):
+   ```bash
+   npx serve out
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+## 🌐 Deployment (Vercel)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This project is configured for **Static Export**. When deploying to Vercel:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Connect your repository.
+2. Vercel will detect it as a Next.js project.
+3. The build command will automatically run `next build`.
+4. Ensure the output directory is set to `out` (Vercel usually detects this automatically when `output: 'export'` is set).
 
-## Deploy on Vercel
+## 📄 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is created for personal and educational use. Text data is derived from Uthmani script sources.
