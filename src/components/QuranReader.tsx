@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { getJuzNumber, toArabicNum } from '@/lib/utils';
 import SwipeWrapper from '@/components/SwipeWrapper';
 import NavModals from '@/components/NavModals';
@@ -22,6 +22,10 @@ const BISMILLAH_PREFIX = "بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ
 
 export default function QuranReader({ pageId, surahs, versesBySurah, currentSurah }: QuranReaderProps) {
     const [activeModal, setActiveModal] = useState<'juz' | 'page' | 'surah' | null>(null);
+
+    useEffect(() => {
+        localStorage.setItem('lastReadPage', pageId.toString());
+    }, [pageId]);
 
     return (
         <div className="flex flex-col h-screen bg-white">

@@ -1,8 +1,8 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ReactNode, useState, useEffect } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import { ReactNode, useEffect, useCallback, useState } from 'react';
 
 interface SwipeWrapperProps {
   children: ReactNode;
@@ -11,66 +11,87 @@ interface SwipeWrapperProps {
 
 export default function SwipeWrapper({ children, currentPage }: SwipeWrapperProps) {
   const router = useRouter();
-  const [direction, setDirection] = useState(0);
+  const [isNavigating, setIsNavigating] = useState(false);
+  
+  // Embla setup with RTL support
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    direction: 'rtl',
+    startIndex: 1, // Start at the current page (middle slide)
+    loop: false,
+    dragFree: false,
+    duration: 30
+  });
 
-  const paginate = (newDirection: number) => {
-    const nextPage = currentPage + newDirection;
-    if (nextPage >= 1 && nextPage <= 604) {
-      setDirection(newDirection);
-      router.push(`/page/${nextPage}`);
+  const onSelect = useCallback(() => {
+    if (!emblaApi || isNavigating) return;
+    
+    const index = emblaApi.selectedScrollSnap();
+    
+    // In RTL [0, 1, 2] = [Previous, Current, Next]
+    // Swipe Right (drag ->) moves to Index 2 -> Next (+1)
+    // Swipe Left (drag <-) moves to Index 0 -> Previous (-1)
+    
+    if (index === 0) {
+      const prevPage = currentPage - 1;
+      if (prevPage >= 1) {
+        setIsNavigating(true);
+        router.push(`/page/${prevPage}`);
+      } else {
+        emblaApi.scrollTo(1);
+      }
+    } else if (index === 2) {
+      const nextPage = currentPage + 1;
+      if (nextPage <= 604) {
+        setIsNavigating(true);
+        router.push(`/page/${nextPage}`);
+      } else {
+        emblaApi.scrollTo(1);
+      }
     }
-  };
+  }, [emblaApi, currentPage, router, isNavigating]);
 
-  const variants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? -300 : 300,
-      opacity: 0,
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1,
-    },
-    exit: (direction: number) => ({
-      zIndex: 0,
-      x: direction < 0 ? -300 : 300,
-      opacity: 0,
-    }),
-  };
+  useEffect(() => {
+    if (!emblaApi) return;
+    emblaApi.on('select', onSelect);
+    
+    // Cleanup listener on unmount or re-render
+    return () => {
+      emblaApi.off('select', onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    
+    // When currentPage changes (route matched), reset carousel to center
+    emblaApi.scrollTo(1, true); // true for jump without animation
+    setIsNavigating(false);
+  }, [currentPage, emblaApi]);
 
   return (
-    <div className="relative overflow-hidden w-full h-full flex flex-col">
-      <AnimatePresence initial={false} custom={direction}>
-        <motion.div
-           key={currentPage}
-           custom={direction}
-           variants={variants}
-           initial="enter"
-           animate="center"
-           transition={{
-             x: { type: "spring", stiffness: 300, damping: 30 },
-             opacity: { duration: 0.2 },
-           }}
-           className="w-full h-full flex flex-col items-center justify-start absolute inset-0 py-4 px-4 overflow-y-auto custom-scrollbar"
-           drag="x"
-           dragConstraints={{ left: 0, right: 0 }}
-           dragElastic={1}
-           onDragEnd={(e, { offset, velocity }) => {
-             const swipe = offset.x;
-
-             // Swipe right (next page)
-             if (swipe > 100) {
-               paginate(1);
-             } 
-             // Swipe left (previous page)
-             else if (swipe < -100) {
-               paginate(-1);
-             }
-           }}
-        >
-          {children}
-        </motion.div>
-      </AnimatePresence>
+    <div className="embla overflow-hidden w-full h-full relative" ref={emblaRef}>
+      <div className="embla__container flex h-full">
+        {/* Previous page slide (Index 0) */}
+        <div className="embla__slide flex-[0_0_100%] min-w-0 h-full flex flex-col items-center justify-center bg-gray-50/50 select-none">
+           <div className="text-gray-300 font-serif text-2xl animate-pulse">
+             Halaman {currentPage > 1 ? currentPage - 1 : '-'}
+           </div>
+        </div>
+        
+        {/* Current page slide (Index 1) */}
+        <div className="embla__slide flex-[0_0_100%] min-w-0 h-full relative overflow-y-auto custom-scrollbar px-4 py-4">
+          <div className="flex flex-col items-center justify-start w-full min-h-full">
+            {children}
+          </div>
+        </div>
+        
+        {/* Next page slide (Index 2) */}
+        <div className="embla__slide flex-[0_0_100%] min-w-0 h-full flex flex-col items-center justify-center bg-gray-50/50 select-none">
+           <div className="text-gray-300 font-serif text-2xl animate-pulse">
+             Halaman {currentPage < 604 ? currentPage + 1 : '-'}
+           </div>
+        </div>
+      </div>
     </div>
   );
 }
