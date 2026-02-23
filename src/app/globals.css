@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Taha';
+    src: url('/fonts/taha.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    --color-primary: #1b4d3e;
+    --color-background-light: #f1eee6;
+    --color-paper-light: #fcfaec;
+    --color-border-gold: #b5904d;
+    --color-text-dark: #1c1c1c;
+
+    --font-arabic: 'Taha', serif;
+    --font-body: 'Noto Sans', sans-serif;
+    --font-serif: 'Amiri', serif;
+
+    --background-image-paper-texture: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+}
+
+@layer utilities {
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(181, 144, 77, 0.3);
+        border-radius: 10px;
+    }
+    
+    .verse-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #b5904d;
+        border-radius: 50%;
+        font-size: 0.6em;
+        margin: 0 4px;
+        font-family: 'Amiri', serif;
+        color: #b5904d;
+        vertical-align: middle;
+        position: relative;
+        top: -2px;
+    }
+
+    .bismillah-text {
+        text-align: center;
+        font-family: 'Taha', serif;
+        font-size: 32px;
+        color: #1b4d3e;
+        margin: 20px 0;
+    }
+
+    .quran-text-container {
+        text-align: justify;
+        text-justify: kashida;
+        text-align-last: center;
+        line-height: 2.2;
+        font-family: 'Taha', serif;
+    }
+    
+    .surah-header-mobile {
+        background-image: url('https://www.transparenttextures.com/patterns/arabesque.png');
+        background-size: 200px;
+        border: 2px solid #b5904d;
+        position: relative;
+        background-color: #fff;
+    }
+
+    .bottom-nav-item {
+        @apply flex flex-col items-center justify-center gap-1 text-gray-500 hover:text-primary transition-colors;
+    }
+    .bottom-nav-item.active {
+        @apply text-white bg-primary h-full px-4;
+    }
+
+    /* Prevent text selection and zoom on mobile */
+    .no-select {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+}
+
+body {
+    overscroll-behavior-y: contain;
+}

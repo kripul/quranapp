@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Al-Quran - Arabic Mushaf View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&amp;family=Noto+Sans:wght@300;400;500;600&amp;family=Scheherazade+New:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#3f6244", // Deep Islamic Green
+                        "background-light": "#f3f0e6", // Warm paper color
+                        "background-dark": "#121212", // Dark reading mode
+                        "paper-light": "#fffdf5",
+                        "paper-dark": "#1e1e1e",
+                        "border-gold": "#c5a059",
+                        "text-dark": "#2c2c2c",
+                        "text-light": "#e0e0e0"
+                    },
+                    fontFamily: {
+                        arabic: ["'Scheherazade New'", "serif"], // Classic Arabic calligraphy style
+                        body: ["'Noto Sans'", "sans-serif"],
+                        serif: ["'Amiri'", "serif"],
+                    },
+                    backgroundImage: {
+                        'paper-texture': "url('https://www.transparenttextures.com/patterns/cream-paper.png')",
+                    },
+                    boxShadow: {
+                        'book': '0 20px 40px -10px rgba(0,0,0,0.3), 0 0 10px rgba(0,0,0,0.1) inset',
+                        'single-page': '0 10px 40px -5px rgba(0,0,0,0.3), 0 0 15px rgba(0,0,0,0.05) inset'
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.05);
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(0,0,0,0.2);
+            border-radius: 4px;
+        }
+        .verse-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border: 2px solid #c5a059;
+            border-radius: 50%;
+            font-size: 0.75em;
+            margin: 0 6px;
+            font-family: 'Amiri', serif;
+            color: #c5a059;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+        .dark .verse-number {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-dark dark:text-text-light font-body transition-colors duration-300 min-h-screen flex flex-col bg-paper-texture">
+<nav class="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-b border-border-gold/30 dark:border-gray-700 shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 bg-primary rounded-full flex items-center justify-center text-white font-serif font-bold shadow-md border border-border-gold">
+                        Q
+                    </div>
+<span class="font-serif text-2xl font-bold text-primary dark:text-white tracking-wide">Al-Mushaf</span>
+</div>
+<div class="hidden md:flex items-center space-x-6">
+<div class="flex items-center space-x-2 bg-paper-light dark:bg-gray-800 rounded-lg px-3 py-1.5 border border-border-gold/30 dark:border-gray-700 shadow-sm">
+<span class="text-xs text-primary dark:text-gray-400 font-bold uppercase tracking-wider font-serif">Juz</span>
+<select class="bg-transparent border-none text-sm font-semibold focus:ring-0 cursor-pointer dark:text-white font-serif">
+<option>15</option>
+<option>16</option>
+<option>17</option>
+</select>
+</div>
+<div class="flex items-center space-x-2 bg-paper-light dark:bg-gray-800 rounded-lg px-3 py-1.5 border border-border-gold/30 dark:border-gray-700 shadow-sm">
+<span class="text-xs text-primary dark:text-gray-400 font-bold uppercase tracking-wider font-serif">Surah</span>
+<select class="bg-transparent border-none text-sm font-semibold focus:ring-0 cursor-pointer w-32 truncate dark:text-white font-serif">
+<option>17. Al-Isra'</option>
+<option>18. Al-Kahf</option>
+</select>
+</div>
+<div class="flex items-center space-x-2">
+<label class="text-xs text-primary dark:text-gray-400 font-bold uppercase tracking-wider font-serif">Page</label>
+<div class="flex items-center space-x-1">
+<button class="p-1 hover:bg-primary/10 dark:hover:bg-gray-700 rounded-full text-primary dark:text-gray-400 transition-colors">
+<span class="material-symbols-outlined text-sm font-bold">chevron_left</span>
+</button>
+<input class="w-16 h-8 text-center border-border-gold/30 dark:border-gray-600 bg-paper-light dark:bg-gray-800 rounded-md text-sm focus:ring-primary focus:border-primary dark:text-white font-serif font-bold" type="number" value="286"/>
+<button class="p-1 hover:bg-primary/10 dark:hover:bg-gray-700 rounded-full text-primary dark:text-gray-400 transition-colors">
+<span class="material-symbols-outlined text-sm font-bold">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-primary hover:bg-primary/10 rounded-full dark:text-gray-400 dark:hover:text-primary transition-colors" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-outlined">dark_mode</span>
+</button>
+<button class="bg-primary text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-opacity-90 transition-all shadow-md flex items-center gap-2 border border-border-gold">
+<span class="material-symbols-outlined text-sm">bookmark</span>
+                        Bookmarks
+                    </button>
+</div>
+</div>
+</div>
+</nav>
+<main class="flex-grow flex items-center justify-center p-4 lg:p-8 overflow-y-auto">
+<div class="relative w-full max-w-[800px] flex flex-col shadow-single-page rounded-sm overflow-hidden bg-paper-light dark:bg-paper-dark border-4 border-double border-border-gold dark:border-yellow-900/40 min-h-[85vh]">
+<div class="h-16 flex items-center justify-between px-8 border-b-2 border-border-gold/20 bg-primary/5 dark:bg-primary/10">
+<span class="font-serif font-bold text-primary dark:text-primary/80 text-lg">Page 286</span>
+<div class="flex items-center space-x-3 bg-white dark:bg-gray-800 border border-border-gold/40 px-4 py-1.5 rounded-full shadow-sm">
+<span class="text-sm font-serif font-bold text-gray-800 dark:text-gray-200">17. Al-Isra'</span>
+</div>
+<span class="text-2xl text-primary font-arabic dark:text-primary/80">٢٨٦</span>
+</div>
+<div class="flex-grow p-6 lg:p-10 flex flex-col items-center justify-start bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] bg-paper-light dark:bg-[#1e1e1e]">
+<div class="w-full h-full border-[6px] border-primary/20 dark:border-primary/30 p-2 rounded-sm relative">
+<div class="w-full h-full border-[3px] border-border-gold dark:border-yellow-700/40 flex flex-col p-6 lg:p-10 relative">
+<div class="absolute top-0 left-0 w-12 h-12 border-t-[4px] border-l-[4px] border-primary/60 dark:border-primary/80 rounded-tl-lg"></div>
+<div class="absolute top-0 right-0 w-12 h-12 border-t-[4px] border-r-[4px] border-primary/60 dark:border-primary/80 rounded-tr-lg"></div>
+<div class="absolute bottom-0 left-0 w-12 h-12 border-b-[4px] border-l-[4px] border-primary/60 dark:border-primary/80 rounded-bl-lg"></div>
+<div class="absolute bottom-0 right-0 w-12 h-12 border-b-[4px] border-r-[4px] border-primary/60 dark:border-primary/80 rounded-br-lg"></div>
+<div class="w-full bg-gradient-to-r from-primary/5 via-primary/15 to-primary/5 dark:from-primary/10 dark:via-primary/20 dark:to-primary/10 border-y-2 border-border-gold/60 h-16 mb-8 flex items-center justify-between px-8 rounded-sm">
+<span class="material-symbols-outlined text-border-gold opacity-80">spa</span>
+<div class="flex items-center gap-6">
+<span class="font-arabic text-2xl text-primary font-bold drop-shadow-sm">سُبْحَانَ الَّذِي</span>
+<div class="w-10 h-10 rounded-full border-2 border-border-gold bg-white dark:bg-gray-800 flex items-center justify-center shadow-sm">
+<span class="font-bold text-primary text-sm">15</span>
+</div>
+<span class="font-arabic text-2xl text-primary font-bold drop-shadow-sm">الإسراء</span>
+</div>
+<span class="material-symbols-outlined text-border-gold opacity-80 transform scale-x-[-1]">spa</span>
+</div>
+<div class="flex-grow text-justify font-arabic text-[32px] md:text-[38px] leading-[2.2] text-black dark:text-gray-100 px-4" dir="rtl" style="text-align-last: center;">
+<p>
+                                ذَٰلِكَ مِمَّا أَوْحَىٰ إِلَيْكَ رَبُّكَ مِنَ الْحِكْمَةِ ۗ وَلَا تَجْعَلْ مَعَ اللَّهِ إِلَٰهًا آخَرَ فَتُلْقَىٰ فِي جَهَنَّمَ مَلُومًا مَّدْحُورًا <span class="verse-number">٣٩</span> 
+                                أَفَأَصْفَاكُمْ رَبُّكُم بِالْبَنِينَ وَاتَّخَذَ مِنَ الْمَلَائِكَةِ إِنَاثًا ۚ إِنَّكُمْ لَتَقُولُونَ قَوْلًا عَظِيمًا <span class="verse-number">٤٠</span> 
+                                وَلَقَدْ صَرَّفْنَا فِي هَٰذَا الْقُرْآنِ لِيَذَّكَّرُوا وَمَا يَزِيدُهُمْ إِلَّا نُفُورًا <span class="verse-number">٤١</span>
+                                قُل لَّوْ كَانَ مَعَهُ آلِهَةٌ كَمَا يَقُولُونَ إِذًا لَّابْتَغَوْا إِلَىٰ ذِي الْعَرْشِ سَبِيلًا <span class="verse-number">٤٢</span>
+                                سُبْحَانَهُ وَتَعَالَىٰ عَمَّا يَقُولُونَ عُلُوًّا كَبِيرًا <span class="verse-number">٤٣</span>
+                                تُسَبِّحُ لَهُ السَّمَاوَاتُ السَّبْعُ وَالْأَرْضُ وَمَن فِيهِنَّ ۚ وَإِن مِّن شَيْءٍ إِلَّا يُسَبِّحُ بِحَمْدِهِ وَلَٰكِن لَّا تَفْقَهُونَ تَسْبِيحَهُمْ ۗ إِنَّهُ كَانَ حَلِيمًا غَفُورًا <span class="verse-number">٤٤</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="h-12 flex items-center justify-center border-t-2 border-border-gold/20 bg-paper-light dark:bg-paper-dark">
+<div class="flex items-center gap-2 text-primary/70 dark:text-primary/60">
+<span class="material-symbols-outlined text-sm">auto_stories</span>
+<span class="text-xs font-bold uppercase tracking-[0.2em] font-serif">Juz 15 • Hizb 29</span>
+</div>
+</div>
+</div>
+</main>
+<div class="fixed bottom-0 w-full bg-white dark:bg-gray-900 border-t border-border-gold/20 dark:border-gray-700 py-3 px-4 text-center text-xs text-gray-500 dark:text-gray-400 z-40 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto">
+<span class="hidden sm:inline font-serif">Rahmat Quran Digital</span>
+<div class="flex items-center gap-4">
+<span class="font-semibold text-primary dark:text-primary/80">Mushaf Mode</span>
+<span class="text-gray-300 dark:text-gray-600">•</span>
+<span>Juz 15</span>
+</div>
+<span class="hidden sm:inline">Ver. 2.1</span>
+</div>
+</div>
+
+</body></html>
