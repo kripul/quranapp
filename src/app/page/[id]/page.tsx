@@ -19,7 +19,7 @@ export default async function QuranPage(props: { params: Promise<{ id: string }>
     const pageBounds = getPageBounds();
     const bound = pageBounds.find((p: any) => p.page === pageId);
 
-    const verses = await getVersesForPage(bound.startSurah, bound.startAyah, bound.endSurah, bound.endAyah);
+    const verses = await getVersesForPage(bound.startSurah, bound.startAyah, bound.endSurah, bound.endAyah, pageId);
 
     let mainSurahId = bound.startSurah;
     const ayahsOfStartSurah = verses.filter(r => r.sura === bound.startSurah).length;

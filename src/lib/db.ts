@@ -1,29 +1,33 @@
-import sqlite3 from 'sqlite3';
-import path from 'path';
 import fs from 'fs';
+import path from 'path';
 
-export async function getVersesForPage(startSurah: number, startAyah: number, endSurah: number, endAyah: number) {
-    return new Promise<any[]>((resolve, reject) => {
-        const dbPath = path.join(process.cwd(), 'quran-uthmani.db');
-        const db = new sqlite3.Database(dbPath, sqlite3.OPEN_READONLY, (err) => {
-            if (err) return reject(err);
-        });
+// At build time, load the pre-extracted JSON data
+let quranData: Record<string, any[]> | null = null;
 
-        const query = `
-            SELECT sura, aya, text 
-            FROM quran_text 
-            WHERE 
-                (sura > ? OR (sura = ? AND aya >= ?)) AND
-                (sura < ? OR (sura = ? AND aya <= ?))
-            ORDER BY sura ASC, aya ASC
-        `;
+function loadQuranData(): Record<string, any[]> {
+    if (quranData) return quranData;
+    const dataPath = path.join(process.cwd(), 'public', 'quran-data.json');
+    quranData = JSON.parse(fs.readFileSync(dataPath, 'utf-8'));
+    return quranData!;
+}
 
-        db.all(query, [startSurah, startSurah, startAyah, endSurah, endSurah, endAyah], (err, rows) => {
-            db.close();
-            if (err) reject(err);
-            else resolve(rows as any[]);
-        });
-    });
+export async function getVersesForPage(startSurah: number, startAyah: number, endSurah: number, endAyah: number, pageId?: number) {
+    // If pageId is provided, use the pre-extracted data directly
+    if (pageId) {
+        const data = loadQuranData();
+        return data[pageId.toString()] || [];
+    }
+    
+    // Fallback: filter from bounds (shouldn't be needed)
+    const data = loadQuranData();
+    for (const [, verses] of Object.entries(data)) {
+        if (verses.length > 0 && 
+            verses[0].sura === startSurah && 
+            verses[0].aya === startAyah) {
+            return verses;
+        }
+    }
+    return [];
 }
 
 export function getSurahs() {
