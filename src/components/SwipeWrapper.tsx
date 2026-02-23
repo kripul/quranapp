@@ -7,10 +7,10 @@ import { ReactNode, useEffect, useCallback, useState } from 'react';
 interface SwipeWrapperProps {
   children: ReactNode;
   currentPage: number;
+  onNavigate: (newPageId: number) => void;
 }
 
-export default function SwipeWrapper({ children, currentPage }: SwipeWrapperProps) {
-  const router = useRouter();
+export default function SwipeWrapper({ children, currentPage, onNavigate }: SwipeWrapperProps) {
   const [isNavigating, setIsNavigating] = useState(false);
   
   // Embla setup with RTL support
@@ -35,7 +35,7 @@ export default function SwipeWrapper({ children, currentPage }: SwipeWrapperProp
       const prevPage = currentPage - 1;
       if (prevPage >= 1) {
         setIsNavigating(true);
-        router.push(`/page/${prevPage}`);
+        onNavigate(prevPage);
       } else {
         emblaApi.scrollTo(1);
       }
@@ -43,12 +43,12 @@ export default function SwipeWrapper({ children, currentPage }: SwipeWrapperProp
       const nextPage = currentPage + 1;
       if (nextPage <= 604) {
         setIsNavigating(true);
-        router.push(`/page/${nextPage}`);
+        onNavigate(nextPage);
       } else {
         emblaApi.scrollTo(1);
       }
     }
-  }, [emblaApi, currentPage, router, isNavigating]);
+  }, [emblaApi, currentPage, onNavigate, isNavigating]);
 
   useEffect(() => {
     if (!emblaApi) return;

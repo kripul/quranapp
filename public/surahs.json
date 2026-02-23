@@ -1,0 +1,669 @@
+[
+  {
+    "number": 1,
+    "name": "سُورَةُ ٱلْفَاتِحَةِ",
+    "englishName": "Al-Faatiha",
+    "startPage": 1
+  },
+  {
+    "number": 2,
+    "name": "سُورَةُ البَقَرَةِ",
+    "englishName": "Al-Baqara",
+    "startPage": 2
+  },
+  {
+    "number": 3,
+    "name": "سُورَةُ آلِ عِمۡرَانَ",
+    "englishName": "Aal-i-Imraan",
+    "startPage": 50
+  },
+  {
+    "number": 4,
+    "name": "سُورَةُ النِّسَاءِ",
+    "englishName": "An-Nisaa",
+    "startPage": 77
+  },
+  {
+    "number": 5,
+    "name": "سُورَةُ المَائـِدَةِ",
+    "englishName": "Al-Maaida",
+    "startPage": 107
+  },
+  {
+    "number": 6,
+    "name": "سُورَةُ الأَنۡعَامِ",
+    "englishName": "Al-An'aam",
+    "startPage": 128
+  },
+  {
+    "number": 7,
+    "name": "سُورَةُ الأَعۡرَافِ",
+    "englishName": "Al-A'raaf",
+    "startPage": 151
+  },
+  {
+    "number": 8,
+    "name": "سُورَةُ الأَنفَالِ",
+    "englishName": "Al-Anfaal",
+    "startPage": 177
+  },
+  {
+    "number": 9,
+    "name": "سُورَةُ التَّوۡبَةِ",
+    "englishName": "At-Tawba",
+    "startPage": 187
+  },
+  {
+    "number": 10,
+    "name": "سُورَةُ يُونُسَ",
+    "englishName": "Yunus",
+    "startPage": 208
+  },
+  {
+    "number": 11,
+    "name": "سُورَةُ هُودٍ",
+    "englishName": "Hud",
+    "startPage": 222
+  },
+  {
+    "number": 12,
+    "name": "سُورَةُ يُوسُفَ",
+    "englishName": "Yusuf",
+    "startPage": 236
+  },
+  {
+    "number": 13,
+    "name": "سُورَةُ الرَّعۡدِ",
+    "englishName": "Ar-Ra'd",
+    "startPage": 249
+  },
+  {
+    "number": 14,
+    "name": "سُورَةُ إِبۡرَاهِيمَ",
+    "englishName": "Ibrahim",
+    "startPage": 256
+  },
+  {
+    "number": 15,
+    "name": "سُورَةُ الحِجۡرِ",
+    "englishName": "Al-Hijr",
+    "startPage": 262
+  },
+  {
+    "number": 16,
+    "name": "سُورَةُ النَّحۡلِ",
+    "englishName": "An-Nahl",
+    "startPage": 268
+  },
+  {
+    "number": 17,
+    "name": "سُورَةُ الإِسۡرَاءِ",
+    "englishName": "Al-Israa",
+    "startPage": 282
+  },
+  {
+    "number": 18,
+    "name": "سُورَةُ الكَهۡفِ",
+    "englishName": "Al-Kahf",
+    "startPage": 294
+  },
+  {
+    "number": 19,
+    "name": "سُورَةُ مَرۡيَمَ",
+    "englishName": "Maryam",
+    "startPage": 305
+  },
+  {
+    "number": 20,
+    "name": "سُورَةُ طه",
+    "englishName": "Taa-Haa",
+    "startPage": 313
+  },
+  {
+    "number": 21,
+    "name": "سُورَةُ الأَنبِيَاءِ",
+    "englishName": "Al-Anbiyaa",
+    "startPage": 322
+  },
+  {
+    "number": 22,
+    "name": "سُورَةُ الحَجِّ",
+    "englishName": "Al-Hajj",
+    "startPage": 332
+  },
+  {
+    "number": 23,
+    "name": "سُورَةُ المُؤۡمِنُونَ",
+    "englishName": "Al-Muminoon",
+    "startPage": 342
+  },
+  {
+    "number": 24,
+    "name": "سُورَةُ النُّورِ",
+    "englishName": "An-Noor",
+    "startPage": 350
+  },
+  {
+    "number": 25,
+    "name": "سُورَةُ الفُرۡقَانِ",
+    "englishName": "Al-Furqaan",
+    "startPage": 360
+  },
+  {
+    "number": 26,
+    "name": "سُورَةُ الشُّعَرَاءِ",
+    "englishName": "Ash-Shu'araa",
+    "startPage": 367
+  },
+  {
+    "number": 27,
+    "name": "سُورَةُ النَّمۡلِ",
+    "englishName": "An-Naml",
+    "startPage": 377
+  },
+  {
+    "number": 28,
+    "name": "سُورَةُ القَصَصِ",
+    "englishName": "Al-Qasas",
+    "startPage": 386
+  },
+  {
+    "number": 29,
+    "name": "سُورَةُ العَنكَبُوتِ",
+    "englishName": "Al-Ankaboot",
+    "startPage": 397
+  },
+  {
+    "number": 30,
+    "name": "سُورَةُ الرُّومِ",
+    "englishName": "Ar-Room",
+    "startPage": 405
+  },
+  {
+    "number": 31,
+    "name": "سُورَةُ لُقۡمَانَ",
+    "englishName": "Luqman",
+    "startPage": 411
+  },
+  {
+    "number": 32,
+    "name": "سُورَةُ السَّجۡدَةِ",
+    "englishName": "As-Sajda",
+    "startPage": 415
+  },
+  {
+    "number": 33,
+    "name": "سُورَةُ الأَحۡزَابِ",
+    "englishName": "Al-Ahzaab",
+    "startPage": 418
+  },
+  {
+    "number": 34,
+    "name": "سُورَةُ سَبَإٍ",
+    "englishName": "Saba",
+    "startPage": 428
+  },
+  {
+    "number": 35,
+    "name": "سُورَةُ فَاطِرٍ",
+    "englishName": "Faatir",
+    "startPage": 435
+  },
+  {
+    "number": 36,
+    "name": "سُورَةُ يسٓ",
+    "englishName": "Yaseen",
+    "startPage": 441
+  },
+  {
+    "number": 37,
+    "name": "سُورَةُ الصَّافَّاتِ",
+    "englishName": "As-Saaffaat",
+    "startPage": 446
+  },
+  {
+    "number": 38,
+    "name": "سُورَةُ صٓ",
+    "englishName": "Saad",
+    "startPage": 453
+  },
+  {
+    "number": 39,
+    "name": "سُورَةُ الزُّمَرِ",
+    "englishName": "Az-Zumar",
+    "startPage": 459
+  },
+  {
+    "number": 40,
+    "name": "سُورَةُ غَافِرٍ",
+    "englishName": "Ghafir",
+    "startPage": 468
+  },
+  {
+    "number": 41,
+    "name": "سُورَةُ فُصِّلَتۡ",
+    "englishName": "Fussilat",
+    "startPage": 477
+  },
+  {
+    "number": 42,
+    "name": "سُورَةُ الشُّورَىٰ",
+    "englishName": "Ash-Shura",
+    "startPage": 483
+  },
+  {
+    "number": 43,
+    "name": "سُورَةُ الزُّخۡرُفِ",
+    "englishName": "Az-Zukhruf",
+    "startPage": 490
+  },
+  {
+    "number": 44,
+    "name": "سُورَةُ الدُّخَانِ",
+    "englishName": "Ad-Dukhaan",
+    "startPage": 496
+  },
+  {
+    "number": 45,
+    "name": "سُورَةُ الجَاثِيَةِ",
+    "englishName": "Al-Jaathiya",
+    "startPage": 499
+  },
+  {
+    "number": 46,
+    "name": "سُورَةُ الأَحۡقَافِ",
+    "englishName": "Al-Ahqaf",
+    "startPage": 503
+  },
+  {
+    "number": 47,
+    "name": "سُورَةُ مُحَمَّدٍ",
+    "englishName": "Muhammad",
+    "startPage": 507
+  },
+  {
+    "number": 48,
+    "name": "سُورَةُ الفَتۡحِ",
+    "englishName": "Al-Fath",
+    "startPage": 511
+  },
+  {
+    "number": 49,
+    "name": "سُورَةُ الحُجُرَاتِ",
+    "englishName": "Al-Hujuraat",
+    "startPage": 516
+  },
+  {
+    "number": 50,
+    "name": "سُورَةُ قٓ",
+    "englishName": "Qaaf",
+    "startPage": 518
+  },
+  {
+    "number": 51,
+    "name": "سُورَةُ الذَّارِيَاتِ",
+    "englishName": "Adh-Dhaariyat",
+    "startPage": 521
+  },
+  {
+    "number": 52,
+    "name": "سُورَةُ الطُّورِ",
+    "englishName": "At-Tur",
+    "startPage": 524
+  },
+  {
+    "number": 53,
+    "name": "سُورَةُ النَّجۡمِ",
+    "englishName": "An-Najm",
+    "startPage": 526
+  },
+  {
+    "number": 54,
+    "name": "سُورَةُ القَمَرِ",
+    "englishName": "Al-Qamar",
+    "startPage": 529
+  },
+  {
+    "number": 55,
+    "name": "سُورَةُ الرَّحۡمَٰن",
+    "englishName": "Ar-Rahmaan",
+    "startPage": 532
+  },
+  {
+    "number": 56,
+    "name": "سُورَةُ الوَاقِعَةِ",
+    "englishName": "Al-Waaqia",
+    "startPage": 535
+  },
+  {
+    "number": 57,
+    "name": "سُورَةُ الحَدِيدِ",
+    "englishName": "Al-Hadid",
+    "startPage": 538
+  },
+  {
+    "number": 58,
+    "name": "سُورَةُ المُجَادلَةِ",
+    "englishName": "Al-Mujaadila",
+    "startPage": 542
+  },
+  {
+    "number": 59,
+    "name": "سُورَةُ الحَشۡرِ",
+    "englishName": "Al-Hashr",
+    "startPage": 546
+  },
+  {
+    "number": 60,
+    "name": "سُورَةُ المُمۡتَحنَةِ",
+    "englishName": "Al-Mumtahana",
+    "startPage": 549
+  },
+  {
+    "number": 61,
+    "name": "سُورَةُ الصَّفِّ",
+    "englishName": "As-Saff",
+    "startPage": 552
+  },
+  {
+    "number": 62,
+    "name": "سُورَةُ الجُمُعَةِ",
+    "englishName": "Al-Jumu'a",
+    "startPage": 553
+  },
+  {
+    "number": 63,
+    "name": "سُورَةُ المُنَافِقُونَ",
+    "englishName": "Al-Munaafiqoon",
+    "startPage": 555
+  },
+  {
+    "number": 64,
+    "name": "سُورَةُ التَّغَابُنِ",
+    "englishName": "At-Taghaabun",
+    "startPage": 556
+  },
+  {
+    "number": 65,
+    "name": "سُورَةُ الطَّلَاقِ",
+    "englishName": "At-Talaaq",
+    "startPage": 558
+  },
+  {
+    "number": 66,
+    "name": "سُورَةُ التَّحۡرِيمِ",
+    "englishName": "At-Tahrim",
+    "startPage": 560
+  },
+  {
+    "number": 67,
+    "name": "سُورَةُ المُلۡكِ",
+    "englishName": "Al-Mulk",
+    "startPage": 562
+  },
+  {
+    "number": 68,
+    "name": "سُورَةُ القَلَمِ",
+    "englishName": "Al-Qalam",
+    "startPage": 565
+  },
+  {
+    "number": 69,
+    "name": "سُورَةُ الحَاقَّةِ",
+    "englishName": "Al-Haaqqa",
+    "startPage": 567
+  },
+  {
+    "number": 70,
+    "name": "سُورَةُ المَعَارِجِ",
+    "englishName": "Al-Ma'aarij",
+    "startPage": 569
+  },
+  {
+    "number": 71,
+    "name": "سُورَةُ نُوحٍ",
+    "englishName": "Nooh",
+    "startPage": 571
+  },
+  {
+    "number": 72,
+    "name": "سُورَةُ الجِنِّ",
+    "englishName": "Al-Jinn",
+    "startPage": 572
+  },
+  {
+    "number": 73,
+    "name": "سُورَةُ المُزَّمِّلِ",
+    "englishName": "Al-Muzzammil",
+    "startPage": 574
+  },
+  {
+    "number": 74,
+    "name": "سُورَةُ المُدَّثِّرِ",
+    "englishName": "Al-Muddaththir",
+    "startPage": 576
+  },
+  {
+    "number": 75,
+    "name": "سُورَةُ القِيَامَةِ",
+    "englishName": "Al-Qiyaama",
+    "startPage": 578
+  },
+  {
+    "number": 76,
+    "name": "سُورَةُ الإِنسَانِ",
+    "englishName": "Al-Insaan",
+    "startPage": 579
+  },
+  {
+    "number": 77,
+    "name": "سُورَةُ المُرۡسَلَاتِ",
+    "englishName": "Al-Mursalaat",
+    "startPage": 581
+  },
+  {
+    "number": 78,
+    "name": "سُورَةُ النَّبَإِ",
+    "englishName": "An-Naba",
+    "startPage": 582
+  },
+  {
+    "number": 79,
+    "name": "سُورَةُ النَّازِعَاتِ",
+    "englishName": "An-Naazi'aat",
+    "startPage": 584
+  },
+  {
+    "number": 80,
+    "name": "سُورَةُ عَبَسَ",
+    "englishName": "Abasa",
+    "startPage": 585
+  },
+  {
+    "number": 81,
+    "name": "سُورَةُ التَّكۡوِيرِ",
+    "englishName": "At-Takwir",
+    "startPage": 586
+  },
+  {
+    "number": 82,
+    "name": "سُورَةُ الانفِطَارِ",
+    "englishName": "Al-Infitaar",
+    "startPage": 587
+  },
+  {
+    "number": 83,
+    "name": "سُورَةُ المُطَفِّفِينَ",
+    "englishName": "Al-Mutaffifin",
+    "startPage": 588
+  },
+  {
+    "number": 84,
+    "name": "سُورَةُ الانشِقَاقِ",
+    "englishName": "Al-Inshiqaaq"
+  },
+  {
+    "number": 85,
+    "name": "سُورَةُ البُرُوجِ",
+    "englishName": "Al-Burooj",
+    "startPage": 590
+  },
+  {
+    "number": 86,
+    "name": "سُورَةُ الطَّارِقِ",
+    "englishName": "At-Taariq",
+    "startPage": 591
+  },
+  {
+    "number": 87,
+    "name": "سُورَةُ الأَعۡلَىٰ",
+    "englishName": "Al-A'laa",
+    "startPage": 592
+  },
+  {
+    "number": 88,
+    "name": "سُورَةُ الغَاشِيَةِ",
+    "englishName": "Al-Ghaashiya"
+  },
+  {
+    "number": 89,
+    "name": "سُورَةُ الفَجۡرِ",
+    "englishName": "Al-Fajr",
+    "startPage": 593
+  },
+  {
+    "number": 90,
+    "name": "سُورَةُ البَلَدِ",
+    "englishName": "Al-Balad"
+  },
+  {
+    "number": 91,
+    "name": "سُورَةُ الشَّمۡسِ",
+    "englishName": "Ash-Shams",
+    "startPage": 595
+  },
+  {
+    "number": 92,
+    "name": "سُورَةُ اللَّيۡلِ",
+    "englishName": "Al-Lail",
+    "startPage": 596
+  },
+  {
+    "number": 93,
+    "name": "سُورَةُ الضُّحَىٰ",
+    "englishName": "Ad-Dhuhaa"
+  },
+  {
+    "number": 94,
+    "name": "سُورَةُ الشَّرۡحِ",
+    "englishName": "Ash-Sharh"
+  },
+  {
+    "number": 95,
+    "name": "سُورَةُ التِّينِ",
+    "englishName": "At-Tin",
+    "startPage": 597
+  },
+  {
+    "number": 96,
+    "name": "سُورَةُ العَلَقِ",
+    "englishName": "Al-Alaq"
+  },
+  {
+    "number": 97,
+    "name": "سُورَةُ القَدۡرِ",
+    "englishName": "Al-Qadr",
+    "startPage": 598
+  },
+  {
+    "number": 98,
+    "name": "سُورَةُ البَيِّنَةِ",
+    "englishName": "Al-Bayyina",
+    "startPage": 599
+  },
+  {
+    "number": 99,
+    "name": "سُورَةُ الزَّلۡزَلَةِ",
+    "englishName": "Az-Zalzala"
+  },
+  {
+    "number": 100,
+    "name": "سُورَةُ العَادِيَاتِ",
+    "englishName": "Al-Aadiyaat",
+    "startPage": 600
+  },
+  {
+    "number": 101,
+    "name": "سُورَةُ القَارِعَةِ",
+    "englishName": "Al-Qaari'a"
+  },
+  {
+    "number": 102,
+    "name": "سُورَةُ التَّكَاثُرِ",
+    "englishName": "At-Takaathur"
+  },
+  {
+    "number": 103,
+    "name": "سُورَةُ العَصۡرِ",
+    "englishName": "Al-Asr",
+    "startPage": 601
+  },
+  {
+    "number": 104,
+    "name": "سُورَةُ الهُمَزَةِ",
+    "englishName": "Al-Humaza"
+  },
+  {
+    "number": 105,
+    "name": "سُورَةُ الفِيلِ",
+    "englishName": "Al-Fil"
+  },
+  {
+    "number": 106,
+    "name": "سُورَةُ قُرَيۡشٍ",
+    "englishName": "Quraish",
+    "startPage": 602
+  },
+  {
+    "number": 107,
+    "name": "سُورَةُ المَاعُونِ",
+    "englishName": "Al-Maa'un"
+  },
+  {
+    "number": 108,
+    "name": "سُورَةُ الكَوۡثَرِ",
+    "englishName": "Al-Kawthar"
+  },
+  {
+    "number": 109,
+    "name": "سُورَةُ الكَافِرُونَ",
+    "englishName": "Al-Kaafiroon",
+    "startPage": 603
+  },
+  {
+    "number": 110,
+    "name": "سُورَةُ النَّصۡرِ",
+    "englishName": "An-Nasr"
+  },
+  {
+    "number": 111,
+    "name": "سُورَةُ المَسَدِ",
+    "englishName": "Al-Masad"
+  },
+  {
+    "number": 112,
+    "name": "سُورَةُ الإِخۡلَاصِ",
+    "englishName": "Al-Ikhlaas",
+    "startPage": 604
+  },
+  {
+    "number": 113,
+    "name": "سُورَةُ الفَلَقِ",
+    "englishName": "Al-Falaq"
+  },
+  {
+    "number": 114,
+    "name": "سُورَةُ النَّاسِ",
+    "englishName": "An-Naas"
+  }
+]

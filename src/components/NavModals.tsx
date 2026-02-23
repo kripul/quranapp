@@ -51,17 +51,18 @@ export default function NavModals({
     activeModal, 
     onClose, 
     surahs,
-    juzStartPages // Map of Juz -> Page
+    juzStartPages, // Map of Juz -> Page
+    onNavigate
 }: { 
     activeModal: 'juz' | 'page' | 'surah' | null; 
     onClose: () => void;
     surahs: any[];
     juzStartPages: Record<number, number>;
+    onNavigate: (newPageId: number) => void;
 }) {
-    const router = useRouter();
 
     const handleSelect = (pageId: number) => {
-        router.push(`/page/${pageId}`);
+        onNavigate(pageId);
         onClose();
     };
 

@@ -10,6 +10,7 @@ interface QuranReaderProps {
     surahs: any[];
     versesBySurah: Record<number, any[]>;
     currentSurah: any;
+    onNavigate: (newPageId: number) => void;
 }
 
 const JUZ_START_PAGES: Record<number, number> = {
@@ -20,7 +21,7 @@ const JUZ_START_PAGES: Record<number, number> = {
 
 const BISMILLAH_PREFIX = "بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ";
 
-export default function QuranReader({ pageId, surahs, versesBySurah, currentSurah }: QuranReaderProps) {
+export default function QuranReader({ pageId, surahs, versesBySurah, currentSurah, onNavigate }: QuranReaderProps) {
     const [activeModal, setActiveModal] = useState<'juz' | 'page' | 'surah' | null>(null);
 
     useEffect(() => {
@@ -53,7 +54,7 @@ export default function QuranReader({ pageId, surahs, versesBySurah, currentSura
 
             {/* Gesture-based Content Layer */}
             <main className="flex-grow relative z-10 w-full overflow-hidden">
-                <SwipeWrapper currentPage={pageId}>
+                <SwipeWrapper currentPage={pageId} onNavigate={onNavigate}>
                     {/* Inner Content Shadowing a Page */}
                     <div className="w-full max-w-[600px] mx-auto min-h-full pb-10">
                         <div className="flex flex-col items-center justify-start quran-text-container p-4">
@@ -104,6 +105,7 @@ export default function QuranReader({ pageId, surahs, versesBySurah, currentSura
                 onClose={() => setActiveModal(null)} 
                 surahs={surahs}
                 juzStartPages={JUZ_START_PAGES}
+                onNavigate={onNavigate}
             />
         </div>
     );
